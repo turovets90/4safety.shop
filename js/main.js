@@ -1,11 +1,5 @@
 $(document).ready(function(){
 
-/*
-    $('.nav .arrow').click(function(){
-        $(this).toggleClass('rotate');
-        $(this).next().slideToggle();
-    });
-
     $('.hamburger').click(function () {
         $('.main-menu').toggleClass('open');
         $('html').toggleClass('page-noscroll');
@@ -25,26 +19,106 @@ $(document).ready(function(){
     });
 
 
-    $('.main-slider').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        dots:true,
-        fade:true,
+    var paging = $('.paging');
+    var p_first = $('span.first');
+    var p_last = $('span.last');
+    var slickElement = $('.main-slider');
+    slickElement.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+        var i = (currentSlide ? currentSlide : 0) + 1;
+        p_first.html(i+"/");
+        p_last.html(slick.slideCount);
+    });
+    if($('.main-slider > div').length >1){
+        $(slickElement).slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            dots:false,
+            fade:true,
+            //autoplay: true,
+            //speed: 1000,
+            //autoplaySpeed:9000,
+            //dotsClass: 'custom_paging',
+        });
+    }
+
+    $('.ms-prev').click(function(){
+        $(slickElement).slick('slickPrev');
+    });
+    $('.ms-next').click(function(){
+        $(slickElement).slick('slickNext');
     });
 
 
-    $(function () {
-        var containerEl = document.querySelector('.mixitup_grid');
-        var mixer = mixitup(containerEl);
-    });
 
-    $('.file').filestyle({
-        text : 'Прикрепить макет',
-        dragdrop: false,
-    });
+    if($('.main-products__slider > div').length > 4) {
+        $('.main-products__slider').slick({
+            autoplay: false,
+            dots: false,
+            arrows: true,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 991,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 575,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    }else if($('.main-products__slider > div').length > 1 && $(window).innerWidth() < 575){
+        $('.main-products__slider').slick({
+            autoplay: false,
+            dots: false,
+            arrows: true,
+            slidesToShow: 1,
+            slidesToScroll: 1
+        });
+    }
 
-    */
+
+
+    /*
+        $('.nav .arrow').click(function(){
+            $(this).toggleClass('rotate');
+            $(this).next().slideToggle();
+        });
+
+
+
+        $('.main-slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            dots:true,
+            fade:true,
+        });
+
+
+        $(function () {
+            var containerEl = document.querySelector('.mixitup_grid');
+            var mixer = mixitup(containerEl);
+        });
+
+        $('.file').filestyle({
+            text : 'Прикрепить макет',
+            dragdrop: false,
+        });
+
+        */
 
 
 });
