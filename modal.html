@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>modal</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <!--link(rel="shortcut icon" href="img/favicon.ico")-->
+    <link rel="stylesheet" href="css/main.css"/><!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="row header-row">
+          <div class="col-8 col-sm-8 col-md-4 col-xl-4 header-row__left">
+            <div class="logo"><a href="#"><img src="img/logo-page.svg"/></a></div>
+          </div>
+          <div class="col-4 mm-btn">
+            <button class="hamburger"><span></span><span></span><span></span></button>
+          </div>
+          <div class="col-12 col-sm-12 col-md-8 col-xl-8 header-row__right">
+            <ul class="header-contacts">
+              <li><a class="phone" href="tel:+111-11-111-11-1">+111-11-111-11-1</a></li>
+              <li><a class="email" href="mailto:e-mail1234@gmail.com">e-mail1234@gmail.com</a></li>
+            </ul>
+            <ul class="social-menu">
+              <li><a class="facebook" href="#"></a></li>
+              <li><a class="instagram" href="#"></a></li>
+            </ul>
+          </div>
+        </div>
+        <nav class="main-menu">
+          <div class="mm-close"></div>
+          <ul class="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Professional series</a></li>
+            <li><a href="#">Contacts</a></li>
+          </ul>
+          <div class="dropdown catalog-nav">
+            <button class="dropdown-toggle" type="button" id="catalog-nav" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Shop</span></button>
+            <ul class="dropdown-menu sub-menu" aria-labelledby="catalog-nav">
+              <li><a href="#">Universal</a></li>
+              <li><a href="#">Kids</a></li>
+              <li><a href="#">Family</a></li>
+            </ul>
+          </div>
+          <ul class="header-contacts">
+            <li><a class="phone" href="tel:+111-11-111-11-1">+111-11-111-11-1</a></li>
+            <li><a class="email" href="mailto:e-mail1234@gmail.com">e-mail1234@gmail.com</a></li>
+          </ul>
+          <ul class="social-menu">
+            <li><a class="facebook" href="#"></a></li>
+            <li><a class="instagram" href="#"></a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="title-breadcrumb">
+      <div class="container">
+        <h1 class="page-title">modal</h1>
+        <ul class="breadcrumb">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">modal</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="container">
+        <button class="btn-default mb-3" data-toggle="modal" data-target="#modal_feedback">form</button>
+        <button class="btn-default" data-toggle="modal" data-target="#modal_thanks">thanks</button>
+      </div>
+    </div>
+    <div class="modal fade" id="modal_feedback" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button class="close" data-dismiss="modal" aria-label="Close"></button>
+            <div class="contacts-form">
+              <div class="c-title">Please leave your message or <br>place an order</div>
+              <form>
+                <div class="row">
+                  <div class="col-12 col-sm-12 col-sm-6 col-xl-4 field">
+                    <input class="form-control" type="text" placeholder="Name"/>
+                  </div>
+                  <div class="col-12 col-sm-12 col-sm-6 col-xl-4 field">
+                    <input class="form-control" type="text" placeholder="Mobile Phone"/>
+                  </div>
+                  <div class="col-12 col-sm-12 col-sm-6 col-xl-4 field">
+                    <input class="form-control" type="text" placeholder="Email"/>
+                  </div>
+                  <div class="col-12 field">
+                    <textarea class="form-control" placeholder="Your message "></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button class="btn-default">SEND</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modal_thanks" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button class="close" data-dismiss="modal" aria-label="Close"></button>
+            <p class="text-center"><strong>Thank you!</strong></p>
+            <p class="text-center">Your order will be delivered <br>within the next 3-4 working days.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="footer-row">
+          <div class="footer-row__left">
+            <div class="logo"><a href="#"><img src="img/logo.svg"/></a></div>
+            <div class="footer-row__left_bottom">
+              <div>Managed by Green Hands</div>
+              <div><img src="img/f-logo.png"/></div>
+            </div>
+          </div>
+          <div class="footer-row__center">
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-4 col-xl-4">
+                <ul class="footer-menu">
+                  <li><a href="#">HOME</a></li>
+                  <li><a href="#">SHOP</a></li>
+                  <li><a href="#">UNIVERSAL</a></li>
+                </ul>
+              </div>
+              <div class="col-12 col-sm-12 col-md-4 col-xl-4">
+                <ul class="footer-menu">
+                  <li><a href="#">PROFESSIONAL</a></li>
+                  <li><a href="#">KIDS</a></li>
+                  <li><a href="#">FAMILY</a></li>
+                </ul>
+              </div>
+              <div class="col-12 col-sm-12 col-md-4 col-xl-4">
+                <ul class="footer-menu">
+                  <li><a href="#">ABOUT US</a></li>
+                  <li><a href="#">NEWS</a></li>
+                  <li><a href="#">CONTACTS</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-row__right">
+            <div><small>UVC air purification and disinfection instrument. The first disinfecting tool recommended by the health committee ultraviolet.</small>
+              <div class="d-flex"><a class="email" href="mailto:e-mail1234@gmail.com">e-mail1234@gmail.com</a>
+                <ul class="social-menu">
+                  <li><a class="facebook" href="#"></a></li>
+                  <li><a class="instagram" href="#"></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.1/umd/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/masonry.js"></script>
+    <script src="js/slick.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
