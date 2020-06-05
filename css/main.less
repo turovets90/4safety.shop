@@ -198,7 +198,7 @@ a, button{
 
 a{
   text-decoration: underline;
-
+  color: @color_green;
   &:hover, &:focus{
     text-decoration: none;
 
@@ -248,6 +248,17 @@ h1, .h1, .h2, h2, h3,.h3, h4, .h4,h5, .h5{
 }
 header{
   background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 991;
+  &.fixed{
+    .header-row {
+      padding: 10px 0;
+    }
+  }
+
 
   ul{
     margin: 0;
@@ -261,6 +272,10 @@ header{
 
 .header-row{
   padding: 25px 0;
+  @media (max-width:767px){
+    padding: 15px 0;
+  }
+
   .header-contacts, .social-menu{
     @media (max-width:767px){
       display: none;
@@ -361,6 +376,7 @@ margin-left: 40px;
       position: relative;
       &:hover,&:focus{
         .box-shadow(1px 6px 10px rgba(0, 0, 0, 0.25));
+        background: @color_green;
       }
       &:before{
         .b_a();
@@ -815,6 +831,12 @@ margin-left: 40px;
   .flex();
   .ai-center();
   .j-center();
+  .transition(@transition_default);
+  &:hover,&:focus{
+    text-decoration: none;
+    background: @color_default;
+    color: #fff;
+  }
 }
 
 .home{
@@ -825,6 +847,25 @@ margin-left: 40px;
     width: 100%;
     background: none;
     z-index: 99;
+    .transition(@transition_default);
+    .logo-fix{
+      display: none;
+    }
+    &.fixed{
+      background: #fff;
+      .logo-default{
+        display: none;
+      }
+      .logo-fix{
+        display: block;
+      }
+      .header-contacts li a{
+        color: @color_default;
+      }
+      .header-row {
+        padding: 10px 0;
+      }
+    }
     .header-contacts{
       li{
         a{
@@ -1231,6 +1272,9 @@ margin-left: 40px;
     .border-radius(50%);
     z-index: 11;
 
+    &:hover,&:focus{
+      background: @color_green;
+    }
     &:before{
       .b_a();
       width: 9px;
@@ -1282,6 +1326,9 @@ footer{
 *{
   color: #fff;
 }
+  small{
+    color: #fff;
+  }
   ul{
     padding-left: 0;
     li{
@@ -1680,6 +1727,8 @@ h1.page-title{
       @media (max-width:575px){
         width: 80px;
         height: 75px;
+        margin-bottom: 10px;
+        margin-right: 10px;
       }
       &.active{
         border:1px solid @color_green;
@@ -2215,14 +2264,17 @@ textarea.form-control{
 
 .page-content{
   .article-list{
-    margin-right: -15px;
-    margin-left: -15px;clear: both;
-    display: inline-block;
+    //display: inline-block;
     width: 100%;
+
     .item{
       padding-right: 10px;
       padding-left: 10px;
       float: left;
+      @media (max-width:767px){
+        padding-right: 7px;
+        padding-left: 7px;
+      }
       .article-item{
         min-height: initial;
         .article-item__content{

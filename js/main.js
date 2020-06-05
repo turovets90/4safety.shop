@@ -110,34 +110,22 @@ $(document).ready(function(){
     });
 
 
-    /*
-        $('.nav .arrow').click(function(){
-            $(this).toggleClass('rotate');
-            $(this).next().slideToggle();
+    $(window).resize(function(){
+        var header_height = $('header').outerHeight();
+        $('.title-breadcrumb').css({'margin-top': header_height+'px'});
+        $(window).scroll(function(){
+            if ($(this).scrollTop() > header_height) {
+                $('header').addClass('fixed');
+            } else {
+                $('header').removeClass('fixed');
+            }
         });
 
+    });
+    $(window).resize();
 
 
-        $('.main-slider').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: false,
-            dots:true,
-            fade:true,
-        });
 
-
-        $(function () {
-            var containerEl = document.querySelector('.mixitup_grid');
-            var mixer = mixitup(containerEl);
-        });
-
-        $('.file').filestyle({
-            text : 'Прикрепить макет',
-            dragdrop: false,
-        });
-
-        */
 
 
 });
