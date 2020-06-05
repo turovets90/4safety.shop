@@ -105,6 +105,10 @@ $(document).ready(function(){
         return false;
     });
 
+    $('.grid').masonry({
+        itemSelector: '.grid-item',
+    });
+
 
     /*
         $('.nav .arrow').click(function(){
