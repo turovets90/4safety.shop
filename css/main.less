@@ -976,9 +976,7 @@ margin-left: 40px;
 
 
   &.type-product{
-    @media (min-width:1200px){
       min-height: 495px;
-    }
     .article-item__content{
     }
     &:hover{
@@ -1860,6 +1858,9 @@ small{
 
 .modal{
   padding: 0 15px !important;
+  @media (max-width:767px){
+    padding: 0 !important;
+  }
 
   .close{
     position: absolute;
@@ -1867,6 +1868,11 @@ small{
     height: 25px;
     right: 20px;
     top: 20px;
+    opacity: 1;
+    @media (max-width:767px){
+      top: 3px;
+      right: 3px;
+    }
     &:before, &:after{
       .b_a();
       width: 20px;
@@ -1900,11 +1906,20 @@ border:0;
 
 .modal-body{
   padding: 0 110px;
+  @media (max-width:1200px){
+    padding: 0 30px;
+  }
+  @media (max-width:767px){
+    padding: 0 15px;
+  }
 }
 
 
 .order-product__form_row_group{
   padding: 35px 0;
+  @media (max-width:1200px){
+    padding: 25px 0;
+  }
   +.order-product__form_row_group{
     border-top:1px solid  rgba(65, 65, 65, 0.15);
   }
@@ -1935,35 +1950,66 @@ border:0;
     color: #414141;
     position: relative;
     width: 100%;
-    &:before{
-      .b_a();
-      width: 1px;
-      height: 53px;
-      background: rgba(65, 65, 65, 0.15);
-      right: -15px;
-      top: 0;
-      bottom: 0;
-      margin: auto;
+    @media (max-width:767px){
+      margin-bottom: 10px;
     }
+    @media (min-width:768px){
+      &:before{
+        .b_a();
+        width: 1px;
+        height: 53px;
+        background: rgba(65, 65, 65, 0.15);
+        right: -15px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    }
+
   }
   strong{
     margin-bottom: 15px;
     display: block;
+    @media (max-width:767px){
+      margin-bottom: 0;
+    }
   }
 
+  .cost-block{
+    @media (max-width:767px){
+      margin-bottom: 20px;
+    }
+  }
+  .amount{
+    @media (max-width:767px){
+      margin-bottom: 15px;
+    }
+  }
   .cost{
     font-family: @SegoeUI-Bold;
     font-size: 24px;
+    @media (max-width:1200px){
+      font-size: 22px;
+    }
   }
   .sum{
     font-family: @SegoeUI-Bold;
     font-size: 24px;
     color: @color_green;
+    @media (max-width:1200px){
+      font-size: 22px;
+    }
   }
   .text-uppercase{
     font-family: @SegoeUI-SemiBold;
     font-size: 18px;
     margin-bottom: 0;
+    @media (max-width:1200px){
+      font-size: 16px;
+    }
+    @media (max-width:767px){
+        margin-bottom: 10px;
+    }
   }
 }
 
@@ -2031,4 +2077,107 @@ border:0;
 
 textarea.form-control{
   height: 175px;
+}
+
+
+
+.page-content{
+  .article-list{
+    margin-bottom: 50px;
+    @media (max-width:1200px){
+      margin-bottom: 30px;
+    }
+    @media (max-width:575px){
+      margin-bottom: 20px;
+    }
+    > div{
+      margin-bottom: 20px;
+      @media (max-width:1400px){
+      @media (min-width:1200px){
+        -ms-flex: 0 0 33.33%;
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+      }
+      }
+
+    }
+  }
+}
+
+.pagination-block{
+  .flex();
+  .ai-center();
+  .j-center();
+}
+
+.pagination{
+  .flex();
+  .j-center();
+  .ai-center();
+
+  li{
+    +li{
+      a{
+        border-left: 0;
+      }
+    }
+    .empty{
+      .flex();
+      .j-center();
+      .ai-end();
+      width: 30px;
+      height: 30px;
+      border: 1px solid rgba(65, 65, 65, 0.15);
+      border-left: 0;
+      padding-bottom: 5px;
+    }
+    a{
+      .flex();
+      .ai-center();
+      .j-center();
+      width: 30px;
+      height: 30px;
+      border: 1px solid rgba(65, 65, 65, 0.15);
+      font-size: 14px;
+      color: @color_default;
+      text-decoration: none;
+      position: relative;
+      &:hover,&:focus{
+        background: @color_green;
+        border:1px solid @color_green;
+        color: #fff;
+      }
+      &.prev{
+        .border-radius(2px 0 0 2px);
+        &:hover,&:focus{
+          &:before{
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='5' height='9' viewBox='0 0 5 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M4 1L1 4.5L4 8' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+          }
+        }
+        &:before{
+          .b_a();
+          .m_a();
+          width: 5px;
+          height: 9px;
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='5' height='9' viewBox='0 0 5 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M4 1L1 4.5L4 8' stroke='%23414141' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+        }
+      }
+      &.next{
+        .border-radius(0 2px 2px 0);
+        &:hover,&:focus{
+          &:before{
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='5' height='9' viewBox='0 0 5 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 8L4 4.5L1 0.999999' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+          }
+        }
+
+        &:before{
+          .b_a();
+          .m_a();
+          width: 5px;
+          height: 9px;
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='5' height='9' viewBox='0 0 5 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 8L4 4.5L1 0.999999' stroke='%23414141' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+        }
+      }
+    }
+  }
 }
